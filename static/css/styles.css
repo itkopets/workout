@@ -20,10 +20,10 @@ header {
 /* Основной контент */
 main {
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: flex; /* Используем flexbox */
+    justify-content: center; /* Центрируем содержимое */
+    flex-wrap: wrap; /* Позволяем перенос блоков на следующую строку */
+    gap: 20px; /* Расстояние между блоками */
 }
 
 /* Таблица календаря */
@@ -67,6 +67,10 @@ main {
     margin-bottom: 10px;
     color: #000;
 }
+.calendar-day a {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: inherit; /* Наследует цвет от родителя */
+}
 
 /* Результаты упражнений */
 .calendar-day .results {
@@ -95,8 +99,8 @@ main {
 
 /* Текущий день */
 .calendar-day.today {
-    background-color: #ffcccb;
-    border-color: #e57373;
+    background-color: #00c3ff93;
+    border-color: #00c3ff93;
     font-weight: bold;
 }
 
@@ -117,6 +121,7 @@ main {
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
     margin: 15px;
     display: inline-block;
     width: 200px;
