@@ -69,6 +69,14 @@ def get_calendar():
     start_day = (calendar.monthrange(year, month)[0] + 1) % 7  # Понедельник - первый день недели
 
     return jsonify({'days_in_month': days_in_month, 'start_day': start_day})
+@app.route('/api/clear', methods=['POST'])
+def clear_exercises():
+    with sqlite3.connect('database.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM exercises')  # Удаляем все записи
+        conn.commit()
+    return jsonify({'status': 'success', 'message': 'Все данные удалены'})
+
 
 if __name__ == '__main__':
     init_db()

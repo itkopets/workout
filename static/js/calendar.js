@@ -87,3 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 });
+document.getElementById('clear-data').addEventListener('click', () => {
+    if (confirm('Вы уверены, что хотите очистить все данные?')) {
+        fetch('/api/clear', { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Данные успешно очищены!');
+                    location.reload(); // Перезагрузка страницы
+                }
+            })
+            .catch(err => console.error('Ошибка при очистке данных:', err));
+    }
+});

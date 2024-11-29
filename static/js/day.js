@@ -13,14 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 if (data[exercise]) {
-                    resultSpan.textContent = data[exercise];
+                    resultSpan.textContent = data[exercise].completed;
+                } else {
+                    resultSpan.textContent = '0';
                 }
             });
 
         // Добавление данных
         button.addEventListener('click', () => {
             const count = parseInt(input.value);
-            if (!count || count <= 0) return;
+            if (!count || count <= 0 || isNaN(count)) {
+                alert('Введите корректное число!');
+                return;
+            }
 
             fetch('/api/exercise', {
                 method: 'POST',
