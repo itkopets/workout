@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/static/css/base.css"> <!-- Общие стили -->
-    <link rel="stylesheet" href="/static/css/exercises.css"> <!-- Стили для упражнений -->
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/exercises.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Упражнения на {{ date }}</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
     <script src="/static/js/day.js" defer></script>
 </head>
 <body>
@@ -24,6 +23,11 @@
                 <button>+</button>
             </div>
             <p><span class="result_t">Результат:</span><span class="result">0</span></p>
+            <div class="progress-wrapper">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
         </div>
         <div class="exercise-block" data-exercise="pushups">
             <img src="/static/images/pushups.png" alt="Отжимания">
@@ -33,6 +37,11 @@
                 <button>+</button>
             </div>
             <p><span class="result_t">Результат:</span><span class="result">0</span></p>
+            <div class="progress-wrapper">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
         </div>
         <div class="exercise-block" data-exercise="press">
             <img src="/static/images/press.png" alt="Пресс">
@@ -42,6 +51,11 @@
                 <button>+</button>
             </div>
             <p><span class="result_t">Результат:</span><span class="result">0</span></p>
+            <div class="progress-wrapper">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
         </div>
         <div class="exercise-block" data-exercise="expander">
             <img src="/static/images/expander.png" alt="Эспандер">
@@ -51,6 +65,11 @@
                 <button>+</button>
             </div>
             <p><span class="result_t">Результат:</span><span class="result">0</span></p>
+            <div class="progress-wrapper">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
