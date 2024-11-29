@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Календарь упражнений</title>
@@ -10,9 +12,25 @@
 <body>
     <header>
         <h1>Календарь упражнений</h1>
+        <div id="month-display"></div>
     </header>
     <main>
-        <div id="calendar"></div>
+        <table id="calendar-table">
+            <thead>
+                <tr id="days-of-week">
+                    <th>Пн</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th>Сб</th>
+                    <th>Вс</th>
+                </tr>
+            </thead>
+            <tbody id="calendar">
+                <!-- Ячейки календаря добавляются через JS -->
+            </tbody>
+        </table>
     </main>
 </body>
 </html>
