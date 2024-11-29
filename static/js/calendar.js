@@ -56,12 +56,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 fetch(`/api/exercise?date=${dayCell.dataset.date}`)
                     .then(response => response.json())
                     .then(summary => {
-                        resultsDiv.innerHTML = `
-                            Приседания: <span class="exercise-value">${summary.squats || 0}</span><br>
-                            Отжимания: <span class="exercise-value">${summary.pushups || 0}</span><br>
-                            Пресс: <span class="exercise-value">${summary.press || 0}</span><br>
-                            Эспандер: <span class="exercise-value">${summary.expander || 0}</span>
-                        `;
+                        const exercises = {
+                            squats: 'Прис',
+                            pushups: 'Отжим',
+                            press: 'Прес',
+                            expander: 'Спанд'
+                        };
+
+                        Object.keys(exercises).forEach(exercise => {
+                            const progressData = summary[exercise] || { completed: 0, goal: 0 };
+                            const progress = (progressData.completed / progressData.goal) * 100 || 0;
+
+                            const label = document.createElement('div');
+                            label.textContent = `${exercises[exercise]}:`;
+
+                            const progressBar = document.createElement('div');
+                            progressBar.classList.add('progress-bar');
+                            progressBar.innerHTML = `<div class="progress-bar-fill" style="width: ${progress}%;"></div>`;
+
+                            resultsDiv.appendChild(label);
+                            resultsDiv.appendChild(progressBar);
+                        });
                     });
 
                 currentRow.appendChild(dayCell);

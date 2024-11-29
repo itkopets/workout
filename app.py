@@ -5,6 +5,14 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# Конфигурация целей для упражнений
+EXERCISE_GOALS = {
+    'squats': 100,
+    'pushups': 50,
+    'press': 50,
+    'expander': 200
+}
+
 # Инициализация базы данных
 def init_db():
     with sqlite3.connect('database.db') as conn:
@@ -48,7 +56,7 @@ def manage_exercises():
             cursor = conn.cursor()
             cursor.execute('SELECT exercise, SUM(count) FROM exercises WHERE date = ? GROUP BY exercise', (date,))
             results = cursor.fetchall()
-        return jsonify({exercise: total for exercise, total in results})
+        return jsonify({exercise: {"completed": total, "goal": EXERCISE_GOALS[exercise]} for exercise, total in results})
 
 # API для календаря
 @app.route('/api/calendar')
