@@ -1,0 +1,168 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Шапка */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Основной контейнер */
+main {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Таблица календаря */
+#calendar-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Заголовок дней недели */
+#days-of-week th {
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #555;
+    font-size: 14px; /* Уменьшенный размер */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ячейки календаря */
+.calendar-day {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    min-height: 0px; /* Минимальная высота */
+    width: auto; /* Автоматическая ширина */
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Дата в ячейке */
+.calendar-day .date-text {
+    font-size: 32px; /* Уменьшенный размер для мобильных устройств */
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #31b3ff;
+}
+
+.calendar-day a {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: inherit; /* Наследует цвет от родителя */
+}
+
+/* Результаты упражнений */
+.calendar-day .results {
+    font-size: 12px; /* Уменьшенный размер текста */
+    color: #555;
+    line-height: 1.2;
+    text-align: left;
+}
+
+/* Ховер эффект */
+.calendar-day:hover {
+    background-color: #d3e8ff;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.calendar-day:hover .date-text/*,
+.calendar-day:hover .results */{
+    color: rgb(89, 142, 255);
+}
+
+/* Текущий день */
+.calendar-day.today {
+    
+    background-color: #e0efff;
+    border-color: #e0efff;
+    font-weight: bold;
+    
+
+}
+
+/* Пустые дни (перед 1-м числом месяца) */
+.empty-day {
+    background-color: transparent;
+    border: none;
+    cursor: default;
+    height: 80px;
+    width: auto;
+}
+
+/* --- Адаптивность --- */
+
+/* Для экранов шириной менее 768px (планшеты) */
+@media (max-width: 768px) {
+    #calendar-table {
+        width: 100%;
+        margin: 0 auto; /* Центрирование */
+    }
+
+    .calendar-day {
+        min-height: 70px;
+        font-size: 12px;
+    }
+
+    .calendar-day .date-text {
+        font-size: 14px;
+    }
+
+    .calendar-day .results {
+        font-size: 9px;
+    }
+
+    #days-of-week th {
+        font-size: 12px;
+    }
+}
+
+/* Для экранов шириной менее 480px (телефоны) */
+@media (max-width: 480px) {
+    #calendar-table {
+        width: 100%;
+        margin: 0 auto; /* Центрирование */
+    }
+
+    .calendar-day {
+        min-height: 60px;
+        padding: 4px;
+        font-size: 10px;
+    }
+
+    .calendar-day .date-text {
+        font-size: 12px;
+    }
+
+    .calendar-day .results {
+        font-size: 8px;
+    }
+
+    #days-of-week th {
+        font-size: 10px;
+    }
+}
+

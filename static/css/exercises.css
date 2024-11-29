@@ -1,0 +1,108 @@
+/* Основной контейнер */
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Центрируем блоки */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    flex-wrap: wrap; /* Горизонтальное размещение блоков с переносом */
+    gap: 20px; /* Расстояние между блоками */
+}
+
+/* Блок упражнений */
+.exercise-block {
+    padding: 10px;
+    width: 300px; /* Увеличиваем ширину до 300px */
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Элементы располагаются вертикально */
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.exercise-block:hover {
+    transform: translateY(0); /* Без смещения */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Изображения упражнений */
+.exercise-block img {
+    width: 100px;
+    height: 100px;
+    
+}
+
+/* Название упражнения */
+.exercise-block h2 {
+    color: #585858;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Входное поле и кнопка */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между полем и кнопкой */
+}
+
+.input-group input {
+    height: 50px; /* Увеличенная высота */
+    width: 100px; /* Узкая ширина */
+    font-size: 18px; /* Крупный текст */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+/* Убираем стандартные стрелки в input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Убираем стрелки в Firefox */
+}
+
+/* Кнопка "Добавить" */
+.input-group button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Результат упражнения */
+.exercise-block .result {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 32px; /* Крупная цифра */
+    margin-top: 10px; /* Отступ сверху */
+    display: block; /* Размещаем на новой строке */
+}
+
+/* Текст "Результат" */
+.exercise-block .result_t {
+    font-size: 16px;
+    color: #737373;
+    text-align: center;
+}

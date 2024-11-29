@@ -1,0 +1,230 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Шапка */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Основной контент */
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Горизонтальное размещение блоков с переносом */
+    gap: 20px;
+}
+
+/* Блок упражнений */
+.exercise-block {
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; /* Фиксированная ширина */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.exercise-block:hover {
+    transform: translateY(-0px);/*потом можно добавить для смещения карточки*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.exercise-block img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.exercise-block h2 {
+    
+    color: #585858;   
+    font-size: 18px;
+}
+
+/* Входное поле */
+.exercise-block input {
+    height: 50px; /* Увеличенная высота */
+    width: 100px; /* Узкая ширина */
+    font-size: 18px; /* Крупный текст */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    margin: 00px 0; /* Отступы сверху и снизу */
+}
+
+/* Убираем стандартные стрелки в input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Убираем стрелки в Firefox */
+}
+
+/* Кнопка "Добавить" */
+.exercise-block button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    margin-left: 15px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-block button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Текущий результат */
+.exercise-block .result {
+    font-weight: bold;
+    color: #007bff;
+    margin-left: 0px;
+    margin-right: 5px;
+    font-size: 32px;
+}
+/* Текущий результат */
+.exercise-block .result_t {  
+    /*font-weight:bold;*/
+    text-align: right;
+    color: #737373;    
+    font-size: 16px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+/* Кнопка "Назад" */
+.back-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Таблица календаря */
+#calendar-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Заголовок дней недели */
+#days-of-week th {
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #555;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ячейки календаря */
+.calendar-day {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    height: 120px;
+    width: 120px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Дата в ячейке */
+.calendar-day .date-text {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.calendar-day a {
+    text-decoration: none; /* Убирает подчеркивание */
+    color: inherit; /* Наследует цвет от родителя */
+}
+
+/* Результаты упражнений */
+.calendar-day .results {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.calendar-day .results .exercise-value {
+    color: #003366; /* Темно-синий */
+    font-weight: bold;
+    
+}
+
+/* Ховер эффект */
+.calendar-day:hover {
+    background-color: #007bff;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.calendar-day:hover .date-text,
+.calendar-day:hover .results {
+    color: white;
+}
+
+/* Текущий день */
+.calendar-day.today {
+    background-color: #00c3ff93;
+    border-color: #00c3ff93;
+    font-weight: bold;
+}
+
+/* Пустые дни (перед 1-м числом месяца) */
+.empty-day {
+    background-color: transparent;
+    border: none;
+    cursor: default;
+    height: 120px;
+    width: 120px;
+}
