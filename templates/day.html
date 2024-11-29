@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Упражнения на {{ date }}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/day.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Упражнения на {{ date }}</h1>
+    </header>
+    <main>
+        <div class="exercise-block" data-exercise="squats">
+            <img src="/static/images/squats.png" alt="Приседания">
+            <h2>Приседания</h2>
+            <input type="number" min="1" placeholder="Количество">
+            <button>Добавить</button>
+            <p>Текущий результат: <span class="result">0</span></p>
+        </div>
+        <div class="exercise-block" data-exercise="pushups">
+            <img src="/static/images/pushups.png" alt="Отжимания">
+            <h2>Отжимания</h2>
+            <input type="number" min="1" placeholder="Количество">
+            <button>Добавить</button>
+            <p>Текущий результат: <span class="result">0</span></p>
+        </div>
+        <div class="exercise-block" data-exercise="press">
+            <img src="/static/images/press.png" alt="Пресс">
+            <h2>Пресс</h2>
+            <input type="number" min="1" placeholder="Количество">
+            <button>Добавить</button>
+            <p>Текущий результат: <span class="result">0</span></p>
+        </div>
+        <div class="exercise-block" data-exercise="expander">
+            <img src="/static/images/expander.png" alt="Эспандер">
+            <h2>Эспандер</h2>
+            <input type="number" min="1" placeholder="Количество">
+            <button>Добавить</button>
+            <p>Текущий результат: <span class="result">0</span></p>
+        </div>
+    </main>
+</body>
+</html>
