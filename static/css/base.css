@@ -31,3 +31,18 @@ header {
     background-color: #0056b3;
     transform: scale(1.05);
 }
+.goals-button {
+    background-color: #7abafd;
+    margin-top: 20px; /* Опускаем кнопку на 20px */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.goals-button:hover {
+    background-color: #034a97;
+}

@@ -182,3 +182,4 @@ main {
     width: 0%; /* Будет обновляться через JS */
     transition: width 0.3s;
 }
+

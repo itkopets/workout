@@ -3,12 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const exerciseBlocks = document.querySelectorAll('.exercise-block');
 
     // Локальное хранилище целей для каждого упражнения
-    const exerciseGoals = {
-        squats: 100,    // Пример корректной цели
-        pushups: 50,
-        press: 50,
-        expander: 200
-    };
+    const exerciseGoals = {};
+
+    // Загрузка целей с сервера
+    fetch('/api/goals')
+        .then(response => response.json())
+        .then(data => {
+            Object.assign(exerciseGoals, data); // Сохраняем цели в локальном объекте
+            console.log('Цели загружены:', exerciseGoals);
+        })
+        .catch(err => console.error('Ошибка загрузки целей:', err));
 
     exerciseBlocks.forEach(block => {
         const exercise = block.dataset.exercise;
@@ -28,14 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
             progressBarFill.style.width = `${progress}%`;
         };
 
-        // Загрузка текущих данных
+        // Загрузка данных для текущего дня
         fetch(`/api/exercise?date=${date}`)
             .then(response => response.json())
             .then(data => {
                 // Получаем данные для текущего упражнения
                 const exerciseData = data[exercise] || { completed: 0, goal: exerciseGoals[exercise] || 1 };
                 const completed = exerciseData.completed || 0; // Если данных нет, начинаем с 0
-                const goal = exerciseData.goal > 1 ? exerciseData.goal : exerciseGoals[exercise] || 1; // Используем локальные цели
+                const goal = exerciseData.goal > 1 ? exerciseData.goal : exerciseGoals[exercise] || 1;
 
                 // Сохраняем цель локально
                 exerciseGoals[exercise] = goal;

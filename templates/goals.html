@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/goals.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование целей</title>
+    <script src="/static/js/goals.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Редактирование целей</h1>
+        <a href="/" class="back-button">← Вернуться на главную</a>
+    </header>
+    <main>
+        <form id="goals-form">
+            <div class="goal-item">
+                <label for="squats-goal">Приседания:</label>
+                <input type="number" id="squats-goal" name="squats" min="1" placeholder="Введите цель">
+            </div>
+            <div class="goal-item">
+                <label for="pushups-goal">Отжимания:</label>
+                <input type="number" id="pushups-goal" name="pushups" min="1" placeholder="Введите цель">
+            </div>
+            <div class="goal-item">
+                <label for="press-goal">Пресс:</label>
+                <input type="number" id="press-goal" name="press" min="1" placeholder="Введите цель">
+            </div>
+            <div class="goal-item">
+                <label for="expander-goal">Эспандер:</label>
+                <input type="number" id="expander-goal" name="expander" min="1" placeholder="Введите цель">
+            </div>
+            <button type="submit" class="save-button">Сохранить цели</button>
+        </form>
+    </main>
+</body>
+</html>
